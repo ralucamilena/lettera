@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Lettera per te</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .envelope {
+      width: 350px;
+      height: 250px;
+      background: #d32f2f;
+      position: relative;
+      cursor: pointer;
+      border: 2px solid #a30000;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .flap {
+      width: 0;
+      height: 0;
+      border-left: 175px solid transparent;
+      border-right: 175px solid transparent;
+      border-bottom: 125px solid #b71c1c;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 2s;
+      transform-origin: top;
+    }
+    .letter {
+      position: absolute;
+      top: 100%;
+      left: 15px;
+      right: 15px;
+      height: 220px;
+      background: #ffeef6;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      transition: top 1.5s;
+      border-radius: 6px;
+      text-align: center;
+      color: #000;
+    }
+    .open .flap {
+      transform: rotateX(180deg);
+    }
+    .open .letter {
+      top: 25px;
+    }
+    .envelope::after {
+      content: "Per Mirko Amore";
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.3em;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Cuori rosa animati sotto */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in-out;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    /* Cuori rosa chiaro fissi sopra la busta */
+    .heart-top {
+      position: absolute;
+      background: #ffc0cb;
+      width: 15px;
+      height: 15px;
+      transform: rotate(45deg);
+    }
+    .heart-top::before,
+    .heart-top::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ffc0cb;
+      border-radius: 50%;
+    }
+    .heart-top::before { top: -7.5px; left: 0; }
+    .heart-top::after { left: -7.5px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-250px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h2>Clicca la busta per leggere la lettera 💌</h2>
+  
+  <!-- Cuori rosa chiaro fissi sopra la busta -->
+  <div class="heart-top" style="left:20%; top:-10px;"></div>
+  <div class="heart-top" style="left:40%; top:-5px;"></div>
+  <div class="heart-top" style="left:60%; top:-12px;"></div>
+  <div class="heart-top" style="left:80%; top:-8px;"></div>
+
+  <div class="envelope" onclick="this.classList.toggle('open')">
+    <div class="flap"></div>
+    <div class="letter">
+      <p><b>Ciao bellissimo❤️❤️</b></p>
+      <p>Che ridere… oggi è 19/09/25 alle ore 18:30 e sto iniziando a scrivere la letterina per il tuo compleanno…<br>
+      In questo momento stai triggerando perché volevi sapere cosa avessi in mente ahahahahah.<br>
+      Come puoi vedere, nulla di così speciale, solo una lettera dove voglio dirti alcune cose che mi piacciono di te e che mi fanno sorridere ogni giorno🥰<br>
+      Non so quanto lungo diventerà questo testo, ma spero di non dimenticare nulla.</p>
+
+      <p>Caro mio amore❤️, brodino (vorrei risentirlo, mi sciogli il cuore), stitch, orsacchiotto in letargo…<br>
+      Inizio col dirti grazie, grazie per quel 7 ottobre del 2024 che hai insistito a parlarmi nonostante la mia freddezza e antipatia. In poco tempo, letteralmente in pochissimo tempo, con le tue arti magiche✨ sei riuscito a sciogliermi e farmi tirare fuori il meglio che potessi offrirti.<br>
+      Voglio anche scusarmi con tutto il cuore e la sincerità per tutto ciò di male che ti ho fatto passare, per i periodi di dolore e ansia che abbiamo attraversato. Spero di non riportarti più a quei momenti così difficili e di riuscire a vivere al meglio e con felicità tutto il tempo che abbiamo a disposizione. Ti chiedo scusa dal profondo del cuore per ogni sofferenza che ti ho provocato.❤️</p>
+
+      <p>Ho così tante cose da dire e non so come fare.<br>
+      Possiamo dire che ormai è da un anno che ci conosciamo… quante belle emozioni mi hai fatto provare, quante cose mi hai fatto scoprire… non si possono contare sulle dita della mano e sono veramente grata di tutto ciò.<br>
+      Vorrei chiederti di farmi una promessa, ma non so quanto tu possa riuscire a mantenerla, in tal caso non è un problema ma te la chiedo lo stesso e proverò ad aiutarti, per quanto mi è possibile, a mantenerla.<br>
+      <i>Promettimi solo di smetterla di sottovalutarti, perché sei una persona bellissima, dentro e fuori. Hai un cuore enorme e un’intelligenza che farebbe invidia al mondo intero. Io credo tanto in te e in tutto quello che fai, e spero davvero che tu possa cominciare a credere in te stesso, perché te lo meriti!</i></p>
+
+      <p>Sono molto felice😍 di averti nella mia vita, mi hai dato tanto come ti ho sempre detto e credo che lo farai sempre, e spero di averti dato tanto a mia volta.</p>
+
+      <p>Se a questo punto della lettera stai piangendo o lacrimando, mi dovrai far sapere scrivendomi in chat <b>“GUE GUE”</b> e io capirò ahahaha.<br>
+      Se non piangi, non farti problemi perché mi basta sapere se ti ha fatto piacere almeno un po’.🌸</p>
+
+      <p>Quindi, <b>bellissimo❤️</b>, oggi è il tuo compleanno e compi <b>25 anni</b>, ti rendi conto? Un quarto di secolo…”UANM!” Come dici tu ahahaha.<br>
+      Non ti do del vecchio, perché sei ancora molto giovane e hai ancora tantissimi sogni da realizzare e progetti da portare avanti. Sono molto felice di poter essere vicino a te in questo giorno speciale… e appena sarà possibile potrò esserti accanto di persona e abbracciarti senza lasciarti andare, perché se potessi non lo farei mai❤️</p>
+
+      <p><b>Sei una persona speciale Mirko❤️ tanto speciale!</b><br>
+      Spero tu possa passare una bellissima giornata, piena di amore e felicità, perché te lo meriti!!</p>
+
+      <p><b>Buon compleanno amore mio❤️<br>
+      TI VOGLIO UN BENE DELL’ANIMA❤️❤️</b></p>
+    </div>
+  </div>
+
+  <!-- Cuori animati sotto -->
+  <div class="heart" style="left:20%; animation-delay:0s;"></div>
+  <div class="heart" style="left:50%; animation-delay:2s;"></div>
+  <div class="heart" style="left:80%; animation-delay:4s;"></div>
+</body>
+</html>
